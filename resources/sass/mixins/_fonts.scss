@@ -1,0 +1,49 @@
+@mixin font-weight($weight) {
+  $weights: (
+          thin: 100,
+          extra-light: 200,
+          ultra-light: 200,
+          light: 300,
+          normal: 400,
+          book: 400,
+          regular: 400,
+          medium: 500,
+          semi-bold: 600,
+          demi-bold: 600,
+          bold: 700,
+          extra-bold: 800,
+          ultra-bold: 900,
+          heavy: 900,
+          black: 900,
+          ultra: 900,
+          ultra-black: 900,
+          extra-ultra: 900
+  );
+
+  $output: $weight;
+  @if map-has-key($weights, $weight) {
+    $output: map-get($weights, $weight);
+  }
+
+  font-weight: $output;
+}
+
+
+@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
+  font-size: $font-size * 1px;
+  // font-size: $font-size * 0.1rem;
+  // example using rem values and 62.5% font-size so 1rem = 10px
+
+  @if $line-height==normal {
+    line-height: normal;
+  } @else {
+    line-height: $line-height / $font-size;
+  }
+
+  @if $letter-spacing==normal {
+    letter-spacing: normal;
+  } @else {
+    letter-spacing: #{$letter-spacing / $font-size}em;
+  }
+}
+

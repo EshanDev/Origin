@@ -1,0 +1,60 @@
+.verify-registration-code-form {
+    width: 100%;
+    margin: 0 auto;
+    @include breakpoint(480px, min) {
+        width: 480px;
+    }
+    fieldset {
+        padding: 0 15px;
+        legend {
+            font-size: 18px;
+            font-weight: 300;
+        }
+        &.border {
+            border-color: rgba(187, 187, 187, 0.5) !important;
+        }
+    }
+    form {
+        label.error {
+            margin-top: 5px;
+            margin-bottom: 0;
+            width: 100%;
+            color: red;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 300;
+        }
+        input {
+            text-transform: uppercase;
+            border-radius: 0 !important;
+            border-color: rgba(187, 187, 187, 0) !important;
+            background-color: rgba(187, 187, 187, .2);
+            transition: all .4s ease;
+            &:focus {
+                border-bottom: 1px solid rgba(187, 187, 187, .7) !important;
+                background-color: rgba(187, 187, 187, .1);
+            }
+            &::placeholder {
+                color: rgba(75, 75, 75, 0.28);
+            }
+        }
+        .form-group {
+            .btn {
+                border-radius: 0;
+                width: 100% !important;
+                @include breakpoint(350px, min) {
+                    width: 200px !important;
+                }
+            }
+        }
+        span {
+            &.success-message {
+                width: 100%;
+                text-align: center;
+                margin-top: -16px;
+                margin-bottom: -9px;
+                color: #0b823b;
+            }
+        }
+    }
+}
