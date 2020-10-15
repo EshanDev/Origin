@@ -1,7 +1,7 @@
 
     <div class="conditions-form">
         <div class="form-header">
-            <div class="text-center">กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</div>
+            <p>กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</p>
         </div>
         <form action="{{ url('auth/send_coded') }}" class="form" id="conditions_form" method="POST" >
             @csrf
@@ -18,7 +18,7 @@
             </div>
             <div class="form-footer">
                 <div class="form-group">
-                    <input type="submit" class="btn btn-secondary" value="ส่งรหัสยืนยันสิทธิ์">
+                    <input type="submit" class="btn btn-secondary" value="รับรหัสลงทะเบียน">
                 </div>
             </div>
         </form>

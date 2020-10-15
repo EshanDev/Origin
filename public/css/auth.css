@@ -202,104 +202,64 @@ body.position-left {
 }
 
 .auth.condition-content .content {
-  padding: 0 15px;
   margin: 0 auto;
-  width: 100%;
-}
-@media (min-width: 1200px) {
-  .auth.condition-content .content {
-    max-width: 80%;
-  }
-}
-@media (min-width: 2000px) {
-  .auth.condition-content .content {
-    max-width: 1000px;
-  }
+  padding: 0 15px;
 }
 .auth.condition-content .content .content-header {
   text-align: center;
-  font-size: 1.8rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 .auth.condition-content .content .content-header .group-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.3;
+  font-size: 19px;
+  font-weight: 400;
 }
 .auth.condition-content .content .conditions .text-header {
-  font-size: 23px;
+  font-size: 17px;
+  font-weight: 400;
 }
-.auth.condition-content .content .conditions .conditions-nav {
-  list-style-type: decimal;
-  margin-left: 30px;
-  padding-left: 25px;
-}
-.auth.condition-content .content .conditions .conditions-nav .conditions-item {
-  font-size: 18px;
+.auth.condition-content .content .conditions .list {
+  font-size: 15px;
   font-weight: 300;
+  line-height: 1.4;
 }
-.auth.condition-content .content .conditions-form {
-  margin-top: 50px;
+.auth.condition-content .content .conditions .list ul {
+  list-style-type: decimal;
+  padding-left: 15px;
 }
 .auth.condition-content .content .conditions-form .form-header {
-  font-size: 16px;
-  font-weight: 200;
-  margin-bottom: 30px;
-}
-.auth.condition-content .content .conditions-form .form {
-  max-width: 60%;
-  margin: 0 auto;
-}
-@media (max-width: 480px) {
-  .auth.condition-content .content .conditions-form .form {
-    max-width: 100%;
-  }
-}
-@media (min-width: 480px) {
-  .auth.condition-content .content .conditions-form .form {
-    max-width: 480px;
-  }
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
 }
 .auth.condition-content .content .conditions-form .form .group-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
 }
-@media (max-width: 480px) {
-  .auth.condition-content .content .conditions-form .form .group-form {
-    grid-template-columns: 1fr;
-  }
-}
-.auth.condition-content .content .conditions-form .form .form-group label[for=student_code], .auth.condition-content .content .conditions-form .form .form-group label[for=student_email] {
-  padding: 0;
+.auth.condition-content .content .conditions-form .form .form-group {
   margin: 0;
+  padding: 0;
+}
+.auth.condition-content .content .conditions-form .form .form-group .form-control {
+  border: 1px solid rgba(97, 97, 97, 0.26);
+}
+.auth.condition-content .content .conditions-form .form .form-group .form-control:focus {
+  border-color: rgba(110, 110, 110, 0.5);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset, 0 0 8px rgba(5, 121, 88, 0);
+}
+.auth.condition-content .content .conditions-form .form .form-control, .auth.condition-content .content .conditions-form .form .btn {
+  border-radius: 0;
+}
+.auth.condition-content .content .conditions-form .form .form-footer {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+}
+.auth.condition-content .content .conditions-form .form .form-footer .btn {
   font-size: 15px;
   font-weight: 300;
-}
-@media (max-width: 900px) {
-  .auth.condition-content .content .content-header {
-    font-size: clamp(1.4rem, 2.5vw, 1.5rem);
-    padding-top: 30px;
-    padding-bottom: 25px;
-  }
-  .auth.condition-content .content .conditions .text-header {
-    font-size: clamp(19px, 2.5vw, 23px);
-    font-weight: 500;
-  }
-  .auth.condition-content .content .conditions .conditions-nav {
-    margin: 0;
-    padding-left: 15px;
-  }
-  .auth.condition-content .content .conditions .conditions-nav .conditions-item {
-    font-size: 16px;
-    font-weight: 300;
-  }
-}
-@media (min-width: 900px) {
-  .auth.condition-content .content .content-header {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    padding-top: 50px;
-    padding-bottom: 25px;
-  }
 }
 
 /* Mixins A Breakpoint */
