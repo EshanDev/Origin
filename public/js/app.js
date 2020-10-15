@@ -548,9 +548,9 @@ eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourc
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\laragon\www\Origin\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\laragon\www\Origin\resources\sass\ui.scss */"./resources/sass/ui.scss");
-module.exports = __webpack_require__(/*! D:\laragon\www\Origin\resources\sass\auth.scss */"./resources/sass/auth.scss");
+__webpack_require__(/*! C:\laragon\www\Origin\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\laragon\www\Origin\resources\sass\ui.scss */"./resources/sass/ui.scss");
+module.exports = __webpack_require__(/*! C:\laragon\www\Origin\resources\sass\auth.scss */"./resources/sass/auth.scss");
 
 
 /***/ })
