@@ -1,4 +1,4 @@
-<div class="auth container-fluid">
+
     <div class="conditions-form">
         <div class="form-header">
             <div class="text-center">กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</div>
@@ -24,5 +24,5 @@
         </form>
 
     </div>
-</div>
+
 

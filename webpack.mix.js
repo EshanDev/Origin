@@ -11,7 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix .js('resources/js/app.js', 'public/js')
+    .js('resources/js/validator.js', 'public/js')
     .sass('resources/sass/ui.scss', 'public/css')
     .sass('resources/sass/auth.scss', 'public/css')
     .version()
@@ -29,6 +30,3 @@ mix.browserSync('http://127.0.0.1:8000');
 //         //
 //     ]);
 
-mix.scripts([
-    'public/vendor/scripts/validator.js',
-], 'public/js/auth.js');

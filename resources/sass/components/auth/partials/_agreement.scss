@@ -1,0 +1,32 @@
+.verify-coded-content{
+
+    .register-agreement{
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .agreement-header{
+            .text-header{
+                font-weight: 400;
+                font-size: 1.3em;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .agreement-list{
+            .nav{
+                padding-left: 30px;
+            }
+            .item{
+                font-size: 17px;
+                font-weight: 300;
+                text-align: justify;
+                margin-bottom: 8px;
+                line-height: 1.4;
+                list-style-type: decimal;
+            }
+        }
+    }
+}

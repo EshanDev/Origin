@@ -32,45 +32,10 @@
             }
         }
 
-        .register-agreement{
-            width: 100%;
-            margin: 0 auto;
-            padding-left: 15px;
-            padding-right: 15px;
-            p{
-                font-size: 25px;
-                margin: 0;
-            }
-            ul{
-                padding-left: 30px;
-                li{
-                    list-style-type: decimal;
-                    font-size: 18px;
-                    font-weight: 300;
-                    text-align: justify;
-                }
-
-            }
-            @include breakpoint(780px, min){
-                max-width: 80%;
-                padding: 0;
-
-                ul{
-                    margin-left: 50px;
-                    li{
-                        list-style-type: decimal;
-                        font-size: 18px;
-                        font-weight: 300;
-                    }
-                }
-             }
-
-
-        }
     }
     .verify-coded {
         max-width: 80%;
-        margin: 0 auto;
+        margin: 25px auto 0 auto ;
         @include breakpoint(780px, max) {
             max-width: 100%;
             padding: 0 15px;

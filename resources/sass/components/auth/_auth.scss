@@ -15,6 +15,7 @@ body {
     padding: 0;
     @include rgba(bg, #ffffff, 1);
     font-family: 'Prompt', sans-serif;
+    @include rgba(color, #4c4c4c, 1);
 }
 
 body {
@@ -23,21 +24,17 @@ body {
     display: grid;
     grid-template-areas: "header header header header" "main main main main";
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 60px 1fr;
-
+    grid-template-rows: auto 1fr;
     min-height: 100vh;
     width: 100%;
 
     header {
         position: fixed;
         width: 100%;
-        height: 60px;
+        height: 50px;
         grid-area: header;
         display: flex;
         align-items: center;
-        @include breakpoint(2500px, min) {
-            height: 200px;
-        }
     }
 
     .main {
@@ -53,7 +50,11 @@ body {
 
         main {
             grid-area: content;
-            align-self: center;
+            margin-top: 50px;
+            @media screen and (min-height: 1100px )
+            {
+                margin-top: 8%;
+            }
         }
 
         footer {
@@ -62,6 +63,9 @@ body {
             height: 100%;
             justify-content: center;
             align-items: center;
+            font-size: 14px;
+            font-weight: 300;
+            color: #6f6f6f;
         }
     }
 
@@ -70,8 +74,10 @@ body {
     }
 }
 
+@import '../auth/partials/register';
 @import "../auth/partials/content";
-@import "../auth/partials/conditions_form";
-@import "../auth/partials/verify_code";
-@import "../auth/partials/verify_form";
-@import "../auth/partials/confirmed_registration";
+//@import "../auth/partials/conditions_form";
+//@import "../auth/partials/verify_code";
+//@import "../auth/partials/verify_form";
+//@import "../auth/partials/confirmed_registration";
+//@import "../auth/partials/agreement";

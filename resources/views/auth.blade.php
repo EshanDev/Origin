@@ -29,5 +29,5 @@
 
 
 @section('script')
-    <script src="{{ mix('js/auth.js') }}"></script>
+    <script src="{{ mix('js/validator.js') }}"></script>
     @endsection

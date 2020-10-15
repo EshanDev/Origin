@@ -1,10 +1,10 @@
-<nav class="auth-navbar">
+<nav class="auth-navbar shadow-sm">
     <div class="auth container-fluid">
         <div class="navbar-content">
             <div class="navbar-brand">
                 <a href="{{ route('auth.home') }}" class="navbar-header">
                     <i class="icons flaticon-id-card"></i>
-                    <div class="text-navbar-brand"> ระบบสมาชิก</div>
+                    <div class="text-navbar-brand"> ระบบลงทะเบียน</div>
                 </a>
             </div>
             <div class="navbar-links">

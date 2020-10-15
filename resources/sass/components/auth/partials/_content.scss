@@ -1,126 +1,132 @@
 .auth {
-    .content {
-        width: 100%;
-        margin: 0 auto;
-        //padding-top: 30px;
-        /* Content Header */
-        .content-header {
-            margin-top: 30px;
-            @include breakpoint(780px, max) {
-                font-size: clamp(1.89em, 5vw, 2.3em);
-                line-height: 1.08;
-                margin-bottom: 25px;
+    &.condition-content {
+        .content {
+            padding: 0 15px;
+            margin: 0 auto;
+            width: 100%;
+            @include breakpoint(1200px, min) {
+                max-width: 80%;
             }
-            @include breakpoint(780px, min) {
-                font-size: clamp(2.3em, 5vw, 3em);
-                line-height: 1.2;
-                margin-bottom: 25px;
-            }
-            @include breakpoint(1200px, min){
-                margin-top: 50px;
-            }
-            @include breakpoint(1900px, min){
-                margin-top: 80px;
+            @include breakpoint(2000px, min) {
+                max-width: 1000px;
             }
 
-        }
-        /* Condition into */
-        .conditions-into {
-            padding: 10px 15px !important;
-            margin: 40px 0;
-            border: 1px solid rgba(242, 132, 20, 0.15);
-            background: rgba(242, 132, 20, 0.015);
-
-            .close {
-                position: absolute;
-                cursor: pointer;
-                padding: 0 !important;
+            .content-header {
                 text-align: center;
-                right: -15px;
-                top: -15px;
-                font-size: 2.5em;
-                color: #f23311;
-            }
-            /* Content body */
-            .content-body {
-                margin: 0 auto;
-                .text-into {
-                    font-size: 18px;
-                    text-indent: 30px;
-                    font-weight: 300;
-                }
-            }
-            /* Text Author */
-            .text-author {
-                padding-bottom: 15px;
-                @include breakpoint(780px, min) {
-                    display: flex;
-                    justify-content: flex-end;
-                    padding-right: 100px;
-                }
+                font-size: 1.8rem;
+
+
                 .group-text {
-                    text-align: center;
-                    p {
-                        margin: 0;
-                        padding: 0;
-                        font-size: 19px;
-                        font-weight: 400;
-                        line-height: 1.2;
-                        &:last-of-type {
-                            font-size: 18px;
+                    display: flex;
+                    flex-direction: column;
+                    line-height: 1.2;
+                }
+            }
+
+
+
+
+            //Condition style
+            .conditions{
+                .text-header{
+                    font-size: 23px;
+                }
+                .conditions-nav{
+                    list-style-type: decimal;
+                    margin-left: 30px;
+                    padding-left: 25px;
+                    .conditions-item{
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+
+
+            // Conditions form
+            .conditions-form{
+                margin-top: 50px;
+                .form-header{
+                    font-size: 16px;
+                    font-weight: 200;
+                    margin-bottom: 30px;
+                }
+                .form{
+                    max-width: 60%;
+                    @include breakpoint(480px, max){
+                        max-width: 100%;
+                    }
+                    @include breakpoint(480px, min){
+                        max-width: 480px;
+                    }
+                    margin: 0 auto;
+                    .group-form{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        @include breakpoint(480px, max){
+                            grid-template-columns: 1fr;
+                        }
+                        grid-gap: 1em;
+                    }
+
+                    .form-group{
+                        label[for="student_code"], label[for="student_email"]{
+                            padding: 0;
+                            margin: 0;
+                            font-size: 15px;
                             font-weight: 300;
                         }
                     }
                 }
             }
-        }
-        /*  Conditions */
-        .conditions {
-            padding-left: 15px;
-            padding-right: 15px;
-            /* Conditions Header */
-            .conditions-header {
-                font-size: 1.5em;
-                margin-bottom: 10px;
-            }
-            /* Conditions Item */
-            .conditions-item {
-                font-size: 18px;
-                font-weight: 300;
-                //padding-left: 25px;
-                text-indent: 30px;
-            }
-        }
-    }
-    /* UL list-style-type = none */
-    .conditions-nav {
-        list-style-type: none;
-    }
-    /* Media Query*/
-    @include breakpoint(1200px, max) {
-        @include breakpoint(780px, min) {
-            .content {
-                width: 100%;
-                margin: 0 auto;
-            }
-        }
-    }
-    @include breakpoint(1900px, max) {
-        @include breakpoint(1200px, min) {
-            .content {
-                //padding-top: 80px;
-                width: 900px;
-                //margin: 0 auto;
-            }
-        }
-    }
-    @include breakpoint(2500px, min) {
-        .content {
-            width: 1000px;
-            margin: 0 auto;
 
-            .content-header{
-                margin-top: 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //Media Query
+
+            @include breakpoint(900px, max)
+            {
+                .content-header{
+                    font-size: clamp(1.4rem, 2.5vw, 1.5rem);
+                    padding-top: 30px;
+                    padding-bottom: 25px;
+                }
+                .conditions{
+                    .text-header{
+                        font-size: clamp(19px, 2.5vw, 23px);
+                        font-weight: 500;
+                    }
+                    .conditions-nav{
+                        margin: 0;
+                        padding-left: 15px;
+                        .conditions-item{
+                            font-size: 16px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+            @include breakpoint(900px, min){
+                .content-header{
+                    font-size: clamp(1.5rem, 2.5vw, 2rem);
+                    padding-top: 50px;
+                    padding-bottom: 25px;
+                }
             }
         }
     }

@@ -1,0 +1,134 @@
+.auth{
+    &.verify-coded-content{
+        .content{
+                padding: 0 15px;
+                width: 100%;
+                margin-top: 20px;
+            @include breakpoint(480px, max)
+            {
+                margin-top: 20px;
+            }
+                margin-left: auto;
+                margin-right: auto;
+            @include breakpoint(1200px, min)
+            {
+                max-width: 80%;
+
+            }
+            @include breakpoint(2000px, min)
+            {
+                max-width: 1000px;
+
+            }
+
+
+            .content-header{
+                font-size: 1.8rem;
+                @include breakpoint(600px, min)
+                {
+                    font-size: clamp(2.5rem, 5vw, 3rem);
+                }
+                @include breakpoint(1000px, min)
+                {
+                    font-size: 3.2rem;
+                }
+            }
+
+
+
+            .register-agreement{
+                margin-bottom: 25px;
+                @include breakpoint(600px, max)
+                {
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                }
+                @include breakpoint(1000px, min){
+                    margin-top: 50px;
+                }
+                .agreement-header{
+                    font-size: 30px;
+                    @include breakpoint(900px, max)
+                    {
+                        font-size: 20px;
+                    }
+                    p{
+                        margin: 0;
+                    }
+                }
+
+
+                .agreement-list{
+                    text-indent: 50px;
+                    font-size: 20px;
+                    font-weight: 300;
+                    line-height: 1.5;
+
+                        @include breakpoint(900px, max)
+                        {
+                            text-align: justify;
+                            font-size: 17px;
+                            line-height: 1.2;
+                        }
+
+                }
+
+            }
+
+            .verify-coded{
+                @include breakpoint(1000px, min)
+                {
+                    margin-top: 50px;
+                }
+                .custom-fieldset{
+                    padding: 0 15px 25px 15px;
+                    .legend{
+                        font-size: clamp(18px, 2.5vw, 20px);
+                        font-weight: 400;
+                    }
+                }
+
+                .grid-container{
+                    display: grid;
+                    grid-template-columns: 3fr 2fr 2fr;
+                    grid-gap: 1em;
+                    @include breakpoint(800px, max){
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    @include breakpoint(480px, max)
+                    {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .form-group{
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+
+
+                        ::placeholder{
+                            font-weight: 300;
+                            color: rgba(140,140,140);
+                        }
+                        label.error{
+                            color: #ff2620;
+                            font-size: 16px;
+                            font-weight: 300;
+                        }
+
+                    }
+
+                }
+                .register-btn{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 30px;
+                    input{
+                        min-width: 200px;
+                    }
+                }
+            }
+
+        }
+    }
+}
