@@ -1,25 +1,26 @@
-<div class="auth verify-coded-content container-fluid">
+<div class="auth registration-content container-fluid">
     <div class="content">
         <div class="content-header">
-            <div class="text-center">
-                <div>ระบบลงทะเบียน</div>
+            <div class="group-text">
+                <div>กรอกข้อมูลนักศึกษา</div>
             </div>
         </div>
 
 
-        <div class="register-agreement">
-            <div class="agreement-header">
-                <p class="text-header">คำชี้แจง</p>
+        <div class="registration">
+            <div class="text-header">
+                <div>คำชี้แจง</div>
             </div>
-            <div class="agreement-list">
-                การกรอกข้อมูลลงทะเบียน นักศึกษาจะต้องกรอกข้อมูลที่เป็นจริง ครบทุกช่องที่กำหนดให้ เพื่อใช้เป็นข้อมูลในการตรวจสอบสิทธิ์การใช้งาน และให้เป็นไปตามวัตถุประสงค์ของการศึกษาวิจัย
+            <div class="list">
+                การกรอกข้อมูลลงทะเบียน นักศึกษาจะต้องกรอกข้อมูลที่เป็นจริง ครบทุกช่องที่กำหนดให้
+                เพื่อใช้เป็นข้อมูลในการตรวจสอบสิทธิ์การใช้งาน และให้เป็นไปตามวัตถุประสงค์ของการศึกษาวิจัย
             </div>
         </div>
 
 
-        <div class="verify-coded">
+        <div class="registration-form">
 
-            <form action="" method="post" class="verify-coded-form" autocomplete="off"
+            <form action="" method="post" class="form" autocomplete="off"
                   id="registration_form">
             @csrf
             <!-- Form Group One -->
@@ -116,7 +117,7 @@
                 <!-- End Form Group Three -->
 
                 <div class="register-btn">
-                    <input type="submit" class="btn btn-outline-secondary btn-lg" value="ส่งข้อมูล">
+                    <input type="submit" class="btn btn-secondary btn-lg" value="ส่งข้อมูล">
                 </div>
 
             </form>

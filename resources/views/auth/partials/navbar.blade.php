@@ -4,7 +4,7 @@
             <div class="navbar-brand">
                 <a href="{{ route('auth.home') }}" class="navbar-header">
                     <i class="icons flaticon-id-card"></i>
-                    <div class="text-navbar-brand"> ระบบลงทะเบียน</div>
+                    <div class="text-navbar-brand"> Registration</div>
                 </a>
             </div>
             <div class="navbar-links">
