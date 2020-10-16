@@ -4,10 +4,10 @@
             margin: 0 auto;
             padding: 0 15px;
             max-width: 100%;
-            
-            
-            
-            
+
+
+
+
             // Condition header style
             .content-header{
                 text-align: center;
@@ -19,10 +19,10 @@
                     font-weight: 400;
                 }
             }
-            
-            
-            
-            
+
+
+
+
             //Condition information style
             .conditions{
                 .text-header{
@@ -68,10 +68,7 @@
 		                font-weight: 300;
 		                margin: 0;
 		                padding: 0;
-		                &::after{
-			                content: ':';
-			                padding-left: 5px;
-		                }
+
 	                }
 	                label.error{
 		                color:rgba(232, 29, 11, 1);
@@ -114,7 +111,7 @@
 
 
             /* Condition Media Query */
-            
+
 
             @include breakpoint(xs, max){
 	            @include breakpoint(320px, min){
@@ -124,7 +121,7 @@
 				            font-size: 18px;
 			            }
 		            }
-		            
+
 		            .conditions{
 			            .text-header{
 				            font-size: 15px;
@@ -133,7 +130,7 @@
 				            font-size: 13px;
 			            }
 		            }
-		            
+
 		            // Form
 		            .conditions-form{
 			            max-width: 100%;
@@ -146,19 +143,19 @@
 				            margin-bottom: 25px;
 			            }
 		            }
-		            
-		            
-		            
+
+
+
 	            }
             }
-            
+
             @include breakpoint(480px, min){
 	            .content-header{
 		            .group-text{
 			            font-size: 21px;
 		            }
 	            }
-            }       
+            }
             @include breakpoint(700px, min){
 	            margin-top: 50px;
             }
@@ -169,11 +166,11 @@
 		            font-size: 25px;
 	            }
 	            }
-            }     
-            
-            
-            
-            
+            }
+
+
+
+
 
 
 

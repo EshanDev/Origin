@@ -51,7 +51,7 @@ body div.main main {
   grid-area: content;
   margin-top: 50px;
 }
-@media screen and (min-height: 1100px) {
+@media screen and (min-height: 899px) {
   body div.main main {
     margin-top: 8%;
   }
@@ -257,10 +257,6 @@ body.position-left {
   font-weight: 300;
   margin: 0;
   padding: 0;
-}
-.auth.condition-content .content .conditions-form .form label[for=student_code]::after, .auth.condition-content .content .conditions-form .form label[for=student_email]::after {
-  content: ":";
-  padding-left: 5px;
 }
 .auth.condition-content .content .conditions-form .form label.error {
   color: #e81d0b;
