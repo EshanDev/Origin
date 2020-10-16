@@ -240,9 +240,31 @@ body.position-left {
   text-align: center;
   font-size: 18px;
 }
-.auth.condition-content .content .conditions-form .form .error {
-  color: #e81d0b;
+.auth.condition-content .content .conditions-form .form ::-moz-placeholder {
+  color: rgba(112, 112, 112, 0.72);
+  font-weight: 300;
+}
+.auth.condition-content .content .conditions-form .form :-ms-input-placeholder {
+  color: rgba(112, 112, 112, 0.72);
+  font-weight: 300;
+}
+.auth.condition-content .content .conditions-form .form ::placeholder {
+  color: rgba(112, 112, 112, 0.72);
+  font-weight: 300;
+}
+.auth.condition-content .content .conditions-form .form label[for=student_code], .auth.condition-content .content .conditions-form .form label[for=student_email] {
   font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+.auth.condition-content .content .conditions-form .form label[for=student_code]::after, .auth.condition-content .content .conditions-form .form label[for=student_email]::after {
+  content: ":";
+  padding-left: 5px;
+}
+.auth.condition-content .content .conditions-form .form label.error {
+  color: #e81d0b;
+  font-size: 13px;
   font-weight: 300;
 }
 .auth.condition-content .content .conditions-form .form .group-form {
@@ -461,6 +483,12 @@ body.position-left {
 
 .auth.container-fluid {
   padding: 0;
+}
+@media (min-width: 900px) {
+  .auth.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 @media (max-width: 1200px) and (min-width: 900px) {
   .auth.container-fluid {

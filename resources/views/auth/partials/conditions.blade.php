@@ -8,12 +8,23 @@
             <div class="group-form">
                 <div class="form-group">
                     <label for="student_code">ระบุรหัสนักศึกษา</label>
-                    <input type="text" class="form-control" name="student_code" id="student_code" value="{{old('student_code')}}">
+                    <input type="text" class="form-control"
+                    name="student_code" 
+                    id="student_code" 
+                    value="{{old('student_code')}}" 
+                    placeholder="xxxxxxxxxx"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'xxxxxxxxxx'">
                 </div>
                 <div class="form-group">
                     <label for="student_email">ระบุที่อยู่อีเมล์</label>
-                    <input type="email" class="form-control" name="student_email" id="student_email" value="{{old('student_email')}}" >
-                    <span id="error_email"></span>
+                    <input type="email" class="form-control" 
+                    name="student_email" 
+                    id="student_email" 
+                    value="{{old('student_email')}}" 
+                    placeholder="email@email.com"
+                    onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'email@email.com'">
                 </div>
             </div>
             <div class="form-footer">
