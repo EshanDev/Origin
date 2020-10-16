@@ -204,6 +204,8 @@ body.position-left {
 .auth.condition-content .content {
   margin: 0 auto;
   padding: 0 15px;
+  max-width: 100%;
+  /* Condition Media Query */
 }
 .auth.condition-content .content .content-header {
   text-align: center;
@@ -212,7 +214,7 @@ body.position-left {
 }
 .auth.condition-content .content .content-header .group-text {
   line-height: 1.3;
-  font-size: 19px;
+  font-size: clamp(18px, 2.5vw, 22px);
   font-weight: 400;
 }
 .auth.condition-content .content .conditions .text-header {
@@ -228,10 +230,20 @@ body.position-left {
   list-style-type: decimal;
   padding-left: 15px;
 }
+.auth.condition-content .content .conditions-form {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .auth.condition-content .content .conditions-form .form-header {
   margin-top: 30px;
   text-align: center;
   font-size: 18px;
+}
+.auth.condition-content .content .conditions-form .form .error {
+  color: #e81d0b;
+  font-size: 14px;
+  font-weight: 300;
 }
 .auth.condition-content .content .conditions-form .form .group-form {
   display: grid;
@@ -260,6 +272,47 @@ body.position-left {
 .auth.condition-content .content .conditions-form .form .form-footer .btn {
   font-size: 15px;
   font-weight: 300;
+}
+@media (max-width: 479px) and (min-width: 320px) {
+  .auth.condition-content .content {
+    width: 100%;
+  }
+  .auth.condition-content .content .content-header .group-text {
+    font-size: 18px;
+  }
+  .auth.condition-content .content .conditions .text-header {
+    font-size: 15px;
+  }
+  .auth.condition-content .content .conditions .list {
+    font-size: 13px;
+  }
+  .auth.condition-content .content .conditions-form {
+    max-width: 100%;
+  }
+  .auth.condition-content .content .conditions-form .form .group-form {
+    grid-template-columns: 1fr;
+  }
+  .auth.condition-content .content .conditions-form .form-footer {
+    margin-bottom: 25px;
+  }
+}
+@media (min-width: 480px) {
+  .auth.condition-content .content .content-header .group-text {
+    font-size: 21px;
+  }
+}
+@media (min-width: 700px) {
+  .auth.condition-content .content {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 900px) {
+  .auth.condition-content .content {
+    max-width: 900px;
+  }
+  .auth.condition-content .content .content-header .group-text {
+    font-size: 25px;
+  }
 }
 
 /* Mixins A Breakpoint */

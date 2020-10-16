@@ -3,16 +3,27 @@
         .content{
             margin: 0 auto;
             padding: 0 15px;
+            max-width: 100%;
+            
+            
+            
+            
+            // Condition header style
             .content-header{
                 text-align: center;
                 margin-top: 25px;
                 margin-bottom: 15px;
                 .group-text{
                     line-height: 1.3;
-                    font-size: 19px;
+                    font-size: clamp(18px, 2.5vw, 22px);
                     font-weight: 400;
                 }
             }
+            
+            
+            
+            
+            //Condition information style
             .conditions{
                 .text-header{
                     font-size: 17px;
@@ -30,14 +41,29 @@
                 }
             }
 
+
+
+
+
+
+			// Condition Form Style
             .conditions-form{
+	            max-width: 500px;
+	            margin-left: auto;
+	            margin-right: auto;
                 .form-header{
                     margin-top: 30px;
                     text-align: center;
                     font-size: 18px;
                 }
 
+				// Form style
                 .form{
+	                .error{
+		                color:rgba(232, 29, 11, 1);
+		                font-size: 14px;
+		                font-weight: 300;
+	                }
                     .group-form{
                         display: grid;
                         grid-template-columns: 1fr 1fr;
@@ -73,14 +99,68 @@
             }
 
 
-            // Media Query
+            /* Condition Media Query */
+            
 
-            @include breakpoint(xs)
-            {
-                .content{
-                    background-color: green;
-                }
+            @include breakpoint(xs, max){
+	            @include breakpoint(320px, min){
+		            width: 100%;
+		            .content-header{
+			            .group-text{
+				            font-size: 18px;
+			            }
+		            }
+		            
+		            .conditions{
+			            .text-header{
+				            font-size: 15px;
+			            }
+			            .list{
+				            font-size: 13px;
+			            }
+		            }
+		            
+		            // Form
+		            .conditions-form{
+			            max-width: 100%;
+			            .form{
+				            .group-form{
+					            grid-template-columns: 1fr;
+				            }
+			            }
+			            .form-footer{
+				            margin-bottom: 25px;
+			            }
+		            }
+		            
+		            
+		            
+	            }
             }
+            
+            @include breakpoint(480px, min){
+	            .content-header{
+		            .group-text{
+			            font-size: 21px;
+		            }
+	            }
+            }       
+            @include breakpoint(700px, min){
+	            margin-top: 50px;
+            }
+            @include breakpoint(900px, min){
+	            max-width: 900px;
+	            .content-header{
+		            .group-text{
+		            font-size: 25px;
+	            }
+	            }
+            }     
+            
+            
+            
+            
+
 
 
 

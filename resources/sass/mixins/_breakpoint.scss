@@ -1,17 +1,30 @@
-/* Mixins A Breakpoint */ 
-
 
 $breakpoints: (
-    xs: 576px,
-    sm: 768px,
-    md: 922px,
-    lg: 1200px,
-    phone: 414px,
-    tablet: 768px, 
-    laptop: 1240px,
-    desktop-lg: 1800px
+	xs: 480px,
+	sm: 768px,
+	md: 1024px,
+	lg: 1280px,
+	// Small tablets and large smartphones (landscape view)
+	lv: 576px,
+	//Small tablets (portrait view)
+	pv: 768px,
+	// Taplets and small desktops
+	tsd: 992px,
+	// Large tablets and desktops
+	ltd: 1200px,
+	
+	
 );
 
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+$break-small: 320px;
+$break-large: 1024px;
+
+/* Mixins A Breakpoint */ 
 @mixin breakpoint($breakpoint, $direction) {
     @if map-has-key($breakpoints, $breakpoint) {
         // Get the breakpoint value.
@@ -22,7 +35,7 @@ $breakpoints: (
             }
         }
         @else if $direction==min {
-            @media (min-width: $breakpoint-value) {
+            @media (min-width: ($breakpoint-value + 1)) {
                 @content;
             }
         }
@@ -49,4 +62,30 @@ $breakpoints: (
             }
         }
     }
+}
+
+@mixin sm{
+	@media(min-width: #{$screen-sm-min}){@content;}
+}
+@mixin md{
+	@media(min-width: #{$screen-md-min}){@content;}
+}
+@mixin lg{
+	@media(min-width: #{$screen-lg-min}){@content;}
+}
+@mixin xl{
+	@media(min-width: #{$screen-xl-min}){@content;}
+}
+
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
 }
