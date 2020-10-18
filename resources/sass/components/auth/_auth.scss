@@ -31,7 +31,7 @@ body {
     header {
         position: fixed;
         width: 100%;
-        height: 50px;
+        height: 45px;
         grid-area: header;
         display: flex;
         align-items: center;
@@ -75,12 +75,25 @@ body {
     &.position-left {
         margin-left: 270px;
     }
-}
 
-@import '../auth/partials/register';
-@import "../auth/partials/content";
-//@import "../auth/partials/conditions_form";
-//@import "../auth/partials/verify_code";
-//@import "../auth/partials/verify_form";
-//@import "../auth/partials/confirmed_registration";
-//@import "../auth/partials/agreement";
+    ul{
+        list-style-type: none;
+    }
+    .form-group{
+        .error{
+        color: rgba(234, 51, 5, 1);
+        }
+    }
+    .form-control{
+        &.error{
+            border: 1px solid rgba(234, 51, 5, 1);
+            box-shadow: 0 1px 1px rgba(252, 36, 7, 0.2) inset, 0 0 8px rgba(255, 77, 8, 0.2);
+        }
+    }
+}
+.auth{
+    @import "../auth/partials/content";
+}
+//@import '../auth/partials/register';
+//@import "../auth/partials/condition";
+

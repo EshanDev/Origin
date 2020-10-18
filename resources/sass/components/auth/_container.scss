@@ -1,12 +1,24 @@
 .auth{
 
     &.container-fluid{
-        padding: 0;
-        @include breakpoint(900px, min){
-	        padding-left: 15px;
-	        padding-right: 15px;
+        padding: 0 15px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include breakpoint(sm ,max)
+        {
+            @include breakpoint(xs, min){
+                width: 100%;
+                padding: 0 15px;
+            }
         }
 
+    //
+    //    @include breakpoint(900px, min){
+	//        padding-left: 15px;
+	//        padding-right: 15px;
+    //    }
+    //
         @include breakpoint(1200px, max)
         {
             @include breakpoint(900px, min)

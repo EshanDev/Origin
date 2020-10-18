@@ -6,6 +6,7 @@ try {
 
     require('bootstrap');
     require('jquery-validation');
+    require('jquery-validation/dist/additional-methods.min');
     require('jquery-mask-plugin');
 } catch (e) {
 

@@ -3,6 +3,7 @@
         <div class="content-header">
             <div class="group-text">
                 <div>ฟอร์มลงทะเบียน</div>
+                <div>ข้อมูลนักศึกษา / รหัสผู้ใช้งาน</div>
             </div>
         </div>
 

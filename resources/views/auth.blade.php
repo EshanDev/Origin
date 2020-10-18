@@ -28,6 +28,3 @@
     @endsection
 
 
-@section('script')
-    <script src="{{ mix('js/validator.js') }}"></script>
-    @endsection
