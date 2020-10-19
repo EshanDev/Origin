@@ -1,4 +1,4 @@
-<div class="auth registration-content container-fluid">
+<div class="auth registration-container container-fluid">
     <div class="content">
         <div class="content-header">
             <div class="group-text">
@@ -26,9 +26,9 @@
             @csrf
             <!-- Form Group One -->
 
-                
-                    <fieldset class="border rounded custom-fieldset">
-                        <legend class="w-auto legend">ส่วนที่ 1 ข้อมูลรหัสลงทะเบียน</legend>
+
+                    <fieldset class="border rounded">
+                        <legend class="w-auto ">ส่วนที่ 1 ข้อมูลรหัสลงทะเบียน</legend>
                         <div class="grid-container">
                             <div class="form-group code">
                                 <label for="registration_code">รหัสลงทะเบียน</label>
@@ -59,16 +59,16 @@
                             </div>
                         </div>
                     </fieldset>
-                
+
 
                 <!-- End Form Group One -->
 
 
                 <!-- Form Group Two -->
 
-                
-                    <fieldset class="border rounded custom-fieldset">
-                        <legend class="w-auto legend">ส่วนที่ 2 ข้อมูลนักศึกษา</legend>
+
+                    <fieldset class="border rounded ">
+                        <legend class="w-auto ">ส่วนที่ 2 ข้อมูลนักศึกษา</legend>
                         <div class="grid-container">
                             <div class="form-group">
                                 <label for="student_name">ชื่อ/สกุล</label>
@@ -96,16 +96,16 @@
 
                         </div>
                     </fieldset>
-                
+
 
                 <!-- End Form Group Two -->
 
 
                 <!-- Form Group Three -->
 
-                
-                    <fieldset class="border rounded custom-fieldset">
-                        <legend class="w-auto legend">ส่วนที่ 3 สร้างรหัสผู้ใช้งาน</legend>
+
+                    <fieldset class="border rounded ">
+                        <legend class="w-auto ">ส่วนที่ 3 สร้างรหัสผู้ใช้งาน</legend>
                         <div class="grid-container">
                             <div class="form-group">
                                 <label for="name">รหัสผู้ใช้งาน <span class="text-danger">***เปลี่ยนได้</span></label>
@@ -128,7 +128,7 @@
                         </div>
 
                     </fieldset>
-                
+
 
                 <!-- End Form Group Three -->
 

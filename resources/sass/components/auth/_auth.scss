@@ -86,14 +86,36 @@ body {
 
 }
 .auth{
-    &.register{
-        .content-header{
-            color: rgb(5, 99, 79);
-        }
-    }
-    @import "../auth/partials/content";
+    &.condition-container, &.registration-container{
+        .content{
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(sm, min){
+                max-width: 768px;
+            }
 
+            .content-header{
+                font-size: 1.5em;
+                text-align: center;
+                @include breakpoint(600px, min){
+                    font-size: 1.8em;
+                }
+                .group-text{
+                    line-height: 1.2;
+                }
+            }
+
+
+          @include breakpoint(xs, max){
+              @include breakpoint(320px, min){
+                  margin-top: 20px;
+              }
+          }
+        }
+
+    }
 }
-//@import '../auth/partials/register';
-//@import "../auth/partials/condition";
+@import '../auth/partials/register';
+@import "../auth/partials/condition";
 

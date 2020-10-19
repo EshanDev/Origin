@@ -4,6 +4,8 @@ $breakpoints: (
 	sm: 768px,
 	md: 1024px,
 	lg: 1280px,
+    w900: 900px,
+    w590: 590px,
 	// Small tablets and large smartphones (landscape view)
 	lv: 576px,
 	//Small tablets (portrait view)
@@ -12,8 +14,8 @@ $breakpoints: (
 	tsd: 992px,
 	// Large tablets and desktops
 	ltd: 1200px,
-	
-	
+
+
 );
 
 $screen-sm-min: 576px;
@@ -24,7 +26,7 @@ $screen-xl-min: 1200px;
 $break-small: 320px;
 $break-large: 1024px;
 
-/* Mixins A Breakpoint */ 
+/* Mixins A Breakpoint */
 @mixin breakpoint($breakpoint, $direction) {
     @if map-has-key($breakpoints, $breakpoint) {
         // Get the breakpoint value.

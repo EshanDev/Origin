@@ -104,7 +104,7 @@ eval("// get base url\nvar getUrl = window.location,\n    baseUrl = getUrl.proto
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Studio3/Desktop/Origin/resources/js/validator.js */"./resources/js/validator.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\Origin\resources\js\validator.js */"./resources/js/validator.js");
 
 
 /***/ })

@@ -1,4 +1,4 @@
-<div class="auth condition-content container-fluid">
+<div class="auth condition-container container-fluid">
     <div class="content">
         <div class="content-header">
             <div class="group-text">
