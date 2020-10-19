@@ -1,5 +1,5 @@
 
-<div class="conditions-form">
+<div class="condition-form">
     <div class="form-header">
         <p>กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</p>
     </div>

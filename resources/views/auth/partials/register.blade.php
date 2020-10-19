@@ -3,7 +3,7 @@
         <div class="content-header">
             <div class="group-text">
                 <div>ฟอร์มลงทะเบียน</div>
-                <div>ข้อมูลนักศึกษา / รหัสผู้ใช้งาน</div>
+                <div>ข้อมูลนักศึกษา/รหัสผู้ใช้งาน</div>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
             @csrf
             <!-- Form Group One -->
 
-                <div class="group-form">
+                
                     <fieldset class="border rounded custom-fieldset">
                         <legend class="w-auto legend">ส่วนที่ 1 ข้อมูลรหัสลงทะเบียน</legend>
                         <div class="grid-container">
@@ -59,14 +59,14 @@
                             </div>
                         </div>
                     </fieldset>
-                </div>
+                
 
                 <!-- End Form Group One -->
 
 
                 <!-- Form Group Two -->
 
-                <div class="group-form">
+                
                     <fieldset class="border rounded custom-fieldset">
                         <legend class="w-auto legend">ส่วนที่ 2 ข้อมูลนักศึกษา</legend>
                         <div class="grid-container">
@@ -96,14 +96,14 @@
 
                         </div>
                     </fieldset>
-                </div>
+                
 
                 <!-- End Form Group Two -->
 
 
                 <!-- Form Group Three -->
 
-                <div class="group-form">
+                
                     <fieldset class="border rounded custom-fieldset">
                         <legend class="w-auto legend">ส่วนที่ 3 สร้างรหัสผู้ใช้งาน</legend>
                         <div class="grid-container">
@@ -128,7 +128,7 @@
                         </div>
 
                     </fieldset>
-                </div>
+                
 
                 <!-- End Form Group Three -->
 
