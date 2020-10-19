@@ -1,0 +1,34 @@
+.login-content{
+    padding: 0 15px 15px 15px;
+
+    .login-icons{
+        text-align: center;
+        font-weight: lighter;
+        font-size: 10rem;
+        line-height: 0;
+        margin-bottom: 15px;
+        color: rgb(5, 99, 79);
+    }
+
+    .form{
+        max-width: 320px;
+        margin: 0 auto;
+        min-height: 480px;
+
+        .login-form-group{
+            display: grid;
+            grid-gap: 1em;
+            .form-group{
+                margin: 0;
+                label{
+                    margin: 0;
+                }
+                .form-control{
+                    border-radius: 0;
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

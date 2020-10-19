@@ -19,6 +19,10 @@
         @include('auth.partials.register')
         @break
 
+        @case('login')
+        @include('auth.partials.login')
+        @break
+
     @default
         @include('auth.partials.content')
     @endswitch

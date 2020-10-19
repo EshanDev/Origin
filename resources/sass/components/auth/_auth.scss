@@ -83,9 +83,16 @@ body {
             box-shadow: 0 1px 1px rgba(252, 36, 7, 0.2) inset, 0 0 8px rgba(255, 77, 8, 0.2);
         }
     }
+
 }
 .auth{
+    &.register{
+        .content-header{
+            color: rgb(5, 99, 79);
+        }
+    }
     @import "../auth/partials/content";
+
 }
 //@import '../auth/partials/register';
 //@import "../auth/partials/condition";
