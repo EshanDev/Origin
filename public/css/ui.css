@@ -10016,5 +10016,9 @@ body {
   justify-items: center;
 }
 #page_not_found .content {
+  font-size: 2.5em;
+}
+#page_not_found .content .icons {
+  line-height: 0;
   font-size: 5em;
 }
