@@ -106,7 +106,7 @@ body .form-control.error {
 .auth.registration-container .content {
   margin-top: 30px;
 }
-@media (min-width: 768px) {
+@media (min-height: 900px) and (min-width: 768px) {
   .auth.registration-container .content {
     margin-top: 10%;
   }
@@ -224,7 +224,7 @@ body .form-control.error {
 .auth.condition-container .content {
   margin-top: 30px;
 }
-@media (min-width: 768px) {
+@media (min-height: 900px) and (min-width: 768px) {
   .auth.condition-container .content {
     margin-top: 10%;
   }
@@ -297,7 +297,7 @@ body .form-control.error {
 .auth.login-container .content {
   margin-top: 30px;
 }
-@media (min-width: 768px) {
+@media (min-height: 900px) and (min-width: 768px) {
   .auth.login-container .content {
     margin-top: 10%;
   }
@@ -361,7 +361,7 @@ body .form-control.error {
 .auth.verify-container .content {
   margin-top: 30px;
 }
-@media (min-width: 768px) {
+@media (min-height: 900px) and (min-width: 768px) {
   .auth.verify-container .content {
     margin-top: 10%;
   }
