@@ -71,10 +71,8 @@
                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'email@email.com'">
                     </div>
                 </div>
-                <div class="form-footer">
-                    <div class="form-group">
+                <div class="condition-btn">
                         <input type="submit" class="btn btn-primary" value="รับรหัสลงทะเบียน">
-                    </div>
                 </div>
             </form>
 

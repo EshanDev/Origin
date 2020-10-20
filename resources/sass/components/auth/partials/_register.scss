@@ -2,8 +2,12 @@
     &.registration-container{
         .content{
             margin-top: 30px;
+            @include breakpoint(768px, min){
+	            margin-top: 10%;
+            }
             .registration{
                 margin-top: 25px;
+                margin-bottom: 30px;
                 .text-header{
                     font-size: 1.3em;
                 }
@@ -32,8 +36,8 @@
                     display: grid;
                     grid-gap: 1em;
                     fieldset{
-                        padding: 5px 15px 20px 15px;
-                        margin-bottom: 8px;
+                        padding: 10px 15px 20px 15px;
+                        margin-bottom: 15px;
                         legend{
                             color: #057d1f;
                             font-size: 18px;
@@ -50,6 +54,11 @@
                                 font-size: 15px;
                                 font-weight: 300;
                             }
+                            
+                        }
+                        .grid-container{
+	                        display: grid;
+	                        grid-gap: 1em;
                         }
                         @include breakpoint(600px, max){
                             @include breakpoint(500px, min){
@@ -82,10 +91,32 @@
                                 }
                             }
                         }
+                        .register-btn{
+                            grid-column-start: 1;
+                            grid-column-end: 3;
+                        }
+                    }
+                    
+                    ::placeholder{
+	                    color: #999999;
+	                    font-weight: 200;
+	                    letter-spacing: .85px;
                     }
                 }
+                
+               .register-btn{
+                   margin-bottom: 30px;
+                   text-align: center;
+                   .btn{
+                       min-width: 200px;
+                       font-weight: 300;
+                       font-size: 15px;
+                   }
+               }
 
             }
+            
+            
         }
     }
 }

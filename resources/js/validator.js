@@ -6,6 +6,7 @@ console.log("this is a "+baseUrl + "verify_email");
 $(function(){
     // Validate for Registration form.
     let register = document.getElementById('registration_form'),
+		login = document.getElementById('login_form'),
         condition = document.getElementById("condition_form");
 
     $(register).validate({
@@ -15,6 +16,14 @@ $(function(){
             student_email: "required",
         }
     });
+	
+	
+	$(login).validate({
+		rules: {
+			email: "required",
+			password: "required",
+		},
+	});
 
     $(function(){
         $.validator.setDefaults({

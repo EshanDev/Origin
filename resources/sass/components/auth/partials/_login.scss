@@ -1,32 +1,63 @@
-.login-content{
-    padding: 0 15px 15px 15px;
+.auth{
+    &.login-container{
+        .content{
+            margin-top: 30px;
+            @include breakpoint(768px, min){
+	            margin-top: 10%;
+            }
 
-    .login-icons{
-        text-align: center;
-        font-weight: lighter;
-        font-size: 10rem;
-        line-height: 0;
-        margin-bottom: 15px;
-        color: rgb(5, 99, 79);
-    }
-
-    .form{
-        max-width: 320px;
-        margin: 0 auto;
-        min-height: 480px;
-
-        .login-form-group{
-            display: grid;
-            grid-gap: 1em;
-            .form-group{
-                margin: 0;
-                label{
+            .content-header{
+                .login-icons{
+                    font-size: 5em;
                     margin: 0;
+                    padding: 0;
+                    line-height: 0;
                 }
-                .form-control{
-                    border-radius: 0;
-                    font-size: 15px;
-                    font-weight: 300;
+                .group-text{
+                    margin-top: 10px;
+                    margin-bottom: 35px;
+                }
+            }
+
+            .login-form{
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 15px;
+                @include breakpoint(321px, min){
+
+                    max-width: 320px;
+                }
+
+                .login-btn{
+                    margin-top: 30px;
+                    margin-bottom: 25px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                    .btn{
+                        min-width: 200px;
+                        font-size: 15px;
+                        font-weight: 300;
+                        
+                    }
+                }
+
+                .form{
+                    ::placeholder{
+                        color: rgb(99, 99, 99);
+                        font-weight: 200;
+                    }
+                    .grid-container{
+                        display: grid;
+                        grid-gap: 1em;
+                    }
+                    .form-group{
+                        margin: 0;
+                        label{
+                            margin: 0;
+                        }
+                    }
                 }
             }
         }
