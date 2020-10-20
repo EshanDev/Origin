@@ -1,19 +1,21 @@
-<div class="auth container-fluid">
+<div class="auth verify-container container-fluid">
     <div class="content">
         <div class="content-header">
-            <div class="text-center">
-                <div>ยืนยันรหัสลงทะเบียน</div>
+            <div class="group-text">
+                <div>ระบบตรวจสอบรหัสลงทะเบียน</div>
+                <div>(Registration Code)</div>
             </div>
         </div>
 
-        <div class="content-body">
-            <div class="verify-registration-code-form">
-                <form action="{{ url('auth/verify') }}" method="POST" id="verify_form"  autocomplete="off">
+        
+            <div class="verify-form">
+                <form action="{{ url('auth/verify') }}" class="form" method="POST" id="verify_form"  autocomplete="off">
                     @csrf
                     <fieldset class="border rounded">
                         <legend class="w-auto">ยืนยันรหัสลงทะเบียน</legend>
                         <div class="form-group">
 
+                            <label for="registration_code">กรอกรหัสลงทะเบียน</label>
                             <input type="text" class="form-control serials"
                                    name="registration_code"
                                    id="registration_code"
@@ -21,15 +23,15 @@
                                    onfocus="this.placeholder = ''"
                                    onblur="this.placeholder = 'ABCDE-ABCDE-ABCDE-ABCDE'">
                         </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary text-center w-auto m-auto">ลงทะเบียน</button>
+                        <div class="verify-btn">
+                            <input type="submit" class="btn btn-primary" value="ส่งรหัสลงทะเบียน">
                         </div>
                     </fieldset>
                 </form>
             </div>
         </div>
     </div>
-</div>
+
 
 @section('script')
     <script>

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RegistrationCode extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['code'];
 }

@@ -86,7 +86,7 @@ body {
 
 }
 .auth{
-    &.condition-container, &.registration-container, &.login-container{
+    &.condition-container, &.registration-container, &.login-container, &.verify-container{
         .content{
             width: 100%;
             margin-left: auto;
@@ -119,4 +119,5 @@ body {
 @import '../auth/partials/register';
 @import "../auth/partials/condition";
 @import "../auth/partials/login";
+@import "../auth/partials/verify";
 

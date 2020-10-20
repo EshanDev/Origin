@@ -75,30 +75,30 @@ body .form-control.error {
   box-shadow: 0 1px 1px rgba(252, 36, 7, 0.2) inset, 0 0 8px rgba(255, 77, 8, 0.2);
 }
 
-.auth.condition-container .content, .auth.registration-container .content, .auth.login-container .content {
+.auth.condition-container .content, .auth.registration-container .content, .auth.login-container .content, .auth.verify-container .content {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 @media (min-width: 769px) {
-  .auth.condition-container .content, .auth.registration-container .content, .auth.login-container .content {
+  .auth.condition-container .content, .auth.registration-container .content, .auth.login-container .content, .auth.verify-container .content {
     max-width: 768px;
   }
 }
-.auth.condition-container .content .content-header, .auth.registration-container .content .content-header, .auth.login-container .content .content-header {
+.auth.condition-container .content .content-header, .auth.registration-container .content .content-header, .auth.login-container .content .content-header, .auth.verify-container .content .content-header {
   font-size: 1.5em;
   text-align: center;
 }
 @media (min-width: 600px) {
-  .auth.condition-container .content .content-header, .auth.registration-container .content .content-header, .auth.login-container .content .content-header {
+  .auth.condition-container .content .content-header, .auth.registration-container .content .content-header, .auth.login-container .content .content-header, .auth.verify-container .content .content-header {
     font-size: 1.8em;
   }
 }
-.auth.condition-container .content .content-header .group-text, .auth.registration-container .content .content-header .group-text, .auth.login-container .content .content-header .group-text {
+.auth.condition-container .content .content-header .group-text, .auth.registration-container .content .content-header .group-text, .auth.login-container .content .content-header .group-text, .auth.verify-container .content .content-header .group-text {
   line-height: 1.2;
 }
 @media (max-width: 479px) and (min-width: 320px) {
-  .auth.condition-container .content, .auth.registration-container .content, .auth.login-container .content {
+  .auth.condition-container .content, .auth.registration-container .content, .auth.login-container .content, .auth.verify-container .content {
     margin-top: 20px;
   }
 }
@@ -356,6 +356,71 @@ body .form-control.error {
 }
 .auth.login-container .content .login-form .form .form-group label {
   margin: 0;
+}
+
+.auth.verify-container .content {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .auth.verify-container .content {
+    margin-top: 10%;
+  }
+}
+.auth.verify-container .content .verify-form {
+  width: 100%;
+  margin: 50px auto 0 auto;
+}
+@media (min-width: 576px) {
+  .auth.verify-container .content .verify-form {
+    max-width: 576px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.auth.verify-container .content .verify-form .form {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-gap: 1em;
+}
+.auth.verify-container .content .verify-form .form fieldset {
+  padding: 10px 15px 20px 15px;
+  margin-bottom: 15px;
+}
+.auth.verify-container .content .verify-form .form fieldset legend {
+  color: #0288D1;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 0;
+}
+.auth.verify-container .content .verify-form .form fieldset .form-group ::-moz-placeholder {
+  color: #5a5a5a;
+  font-weight: 200;
+}
+.auth.verify-container .content .verify-form .form fieldset .form-group :-ms-input-placeholder {
+  color: #5a5a5a;
+  font-weight: 200;
+}
+.auth.verify-container .content .verify-form .form fieldset .form-group ::placeholder {
+  color: #5a5a5a;
+  font-weight: 200;
+}
+.auth.verify-container .content .verify-form .form fieldset .form-group label {
+  margin: 0;
+}
+.auth.verify-container .content .verify-form .form fieldset .verify-btn {
+  text-align: center;
+}
+.auth.verify-container .content .verify-form .form fieldset .verify-btn .btn {
+  min-width: 100%;
+  font-size: 15px;
+  font-weight: 300;
+}
+@media (min-width: 320px) {
+  .auth.verify-container .content .verify-form .form fieldset .verify-btn .btn {
+    min-width: 200px;
+  }
 }
 
 /* Mixins A Breakpoint */

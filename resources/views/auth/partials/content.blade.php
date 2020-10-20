@@ -54,7 +54,7 @@
             <div class="form-header">
                 <p>กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</p>
             </div>
-            <form action="{{ url('auth/send_coded') }}" class="form" id="condition_form" method="POST"
+            <form action="{{ route('auth.getCode') }}" class="form" id="condition_form" method="POST"
                 autocomplete="off">
                 @csrf
                 <div class="grid-container">

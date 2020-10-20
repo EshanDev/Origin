@@ -10006,3 +10006,15 @@ body {
   background-color: rgba(219, 219, 219, 0.3);
   font-family: "Prompt";
 }
+
+#page_not_found {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+#page_not_found .content {
+  font-size: 5em;
+}

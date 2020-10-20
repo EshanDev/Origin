@@ -22,6 +22,9 @@
         @case('login')
         @include('auth.partials.login')
         @break
+        @case('verify_code')
+        @include('auth.partials.verify_registration_code')
+        @break
 
     @default
         @include('auth.partials.content')

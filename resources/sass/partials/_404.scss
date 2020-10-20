@@ -1,0 +1,12 @@
+#page_not_found{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+
+    .content{
+        font-size: 5em;
+    }
+}
