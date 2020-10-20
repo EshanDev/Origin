@@ -1,4 +1,5 @@
 <div class="auth verify-container container-fluid">
+
     <div class="content">
         <div class="content-header">
             <div class="group-text">
@@ -7,7 +8,12 @@
             </div>
         </div>
 
-        
+        @if($errors->has('registration_code'))
+            <div class="alert alert-danger mt-5 text-center">
+                {{$errors->first('registration_code')}}
+            </div>
+        @endif
+
             <div class="verify-form">
                 <form action="{{ url('auth/verify') }}" class="form" method="POST" id="verify_form"  autocomplete="off">
                     @csrf

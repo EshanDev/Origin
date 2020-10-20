@@ -10016,9 +10016,16 @@ body {
   justify-items: center;
 }
 #page_not_found .content {
+  text-align: center;
   font-size: 2.5em;
 }
 #page_not_found .content .icons {
   line-height: 0;
   font-size: 5em;
+}
+#page_not_found .content .text-danger {
+  font-size: 18px;
+}
+#page_not_found .content a {
+  text-decoration: none;
 }

@@ -17,13 +17,23 @@ class AuthController extends Controller
 
     public function verify(Request $request)
     {
-        $rules = array(
+        $rules = [
             'registration_code' => 'required|string',
-        );
-        $messages = array(
-            'registration_code.required' => "กรุณากรอกรหัสลงทะเบียน",
-        );
+        ];
+        $messages = [
+          'required' => 'กรุณากรอกรหัสลงทะเบียน',
+        ];
 
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if($validator->fails()){
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        };
+
+        return response()->json($request->all());
 
     }
 }

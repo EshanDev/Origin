@@ -7,10 +7,17 @@
     justify-items: center;
 
     .content{
+        text-align: center;
         font-size: 2.5em;
         .icons{
             line-height: 0;
             font-size: 5em;
+        }
+        .text-danger{
+            font-size: 18px;
+        }
+        a{
+            text-decoration: none;
         }
     }
 }

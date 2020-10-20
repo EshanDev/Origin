@@ -10,6 +10,8 @@
 @section('main-app')
 
 
+
+
     @switch($page)
         @case('home')
         @include('auth.partials.content')
