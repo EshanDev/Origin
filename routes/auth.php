@@ -33,6 +33,8 @@ Route::name('auth.')->group(function(){
 Route::prefix('verify')->group(function(){
         Route::get('', [AuthController::class, 'verifyCodeForm'])->name('verify.code');
         Route::post('', [VerifyController::class, 'verify_registration_code']);
+        Route::post('is_valid', [VerifyController::class, 'is_valid']);
+        Route::post('is_invalid', [VerifyController::class, 'is_invalid']);
    
 });
 

@@ -115,6 +115,9 @@ body {
         }
 
     }
+    .form-control.is-invalid{
+        color: rgb(159, 22, 22);
+    }
 }
 @import '../auth/partials/register';
 @import "../auth/partials/condition";

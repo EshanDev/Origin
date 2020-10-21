@@ -20,4 +20,18 @@ class VerifyController extends Controller
             echo 'true';
         }
     } 
+
+    public function is_valid(Request $request)
+    {
+        if(!empty($request->all())){
+            
+        }   
+    }
+
+    public function is_invalid(Request $request)
+    {
+        $email = CodeGenerated::all()->where('student_email', $request->input('student_email'))->first();
+        $code = CodeGenerated::all()->where('student_code', $request->input('student_code'))->first();
+        $reg = CodeGenerated::all()->where('registration_code', $request->input('registration_code'))->first();
+    }
 }

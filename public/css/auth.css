@@ -102,6 +102,9 @@ body .form-control.error {
     margin-top: 20px;
   }
 }
+.auth .form-control.is-invalid {
+  color: #9f1616;
+}
 
 .auth.registration-container .content {
   margin-top: 30px;

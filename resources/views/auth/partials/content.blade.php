@@ -62,9 +62,15 @@
                 <div class="grid-container">
                     <div class="form-group">
                         <label for="student_code">ระบุรหัสนักศึกษา</label>
-                        <input type="text" class="form-control @error('student_code') is-invalid @enderror" name="student_code" id="student_code"
-                            value="{{old('student_code')}}" placeholder="xxxxxxxxxx" onfocus="this.placeholder = ''"
+                        <input type="text" class="form-control @error('student_code') is-invalid @enderror"
+                            name="student_code" id="student_code" value="{{old('student_code')}}"
+                            placeholder="xxxxxxxxxx" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'xxxxxxxxxx'">
+                        @error('student_code')
+                        <span class="invalid-feedback" role="alert">
+                            {{ $message }}
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="student_email">ระบุที่อยู่อีเมล์</label>
@@ -77,13 +83,15 @@
                     <input type="submit" class="btn btn-primary" value="รับรหัสลงทะเบียน">
                 </div>
                 @if($errors->any())
-                <div class="alert alert-danger mt-5">
-                    <ul style="margin: 0">
-                        @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                <ul style="margin: 0;">
+                    @foreach($errors->all() as $error)
+                        <li>
+                            <script>
+                                console.log('{{ $error }}');
+                            </script>
+                        </li>
+                    @endforeach
+                </ul>
                 @endif
             </form>
 
