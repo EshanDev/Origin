@@ -1,4 +1,4 @@
 require('./bootstrap');
 require('./navigation');
 
-require('./plugins/validation');
+require('./plugins/validate');

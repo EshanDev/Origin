@@ -15,35 +15,61 @@ class VerifyController extends Controller
         $Exists_reg_code = CodeGenerated::all()->where('registration_code', $request->input('registration_code'))->first();
 
         if(!$Exists_reg_code){
-            echo 'false';
+            return back()->withInput()->withErrors('รหัสลงทะเบียนไม่ถูกต้อง');
         } else {
-            echo 'true';
-        }
-    }
+            $codes = DB::table('code_generateds')
+                ->select('student_code', 'student_email', 'registration_code')
+                ->where('registration_code', $request->input('registration_code'))
+                ->get();
 
-    public function is_valid(Request $request)
-    {
-        if( !empty($request->except('_token'))){
+            foreach ($codes as $code){
+                $data = array(
+                    'student_code' => $code->student_code,
+                    'student_email' => $code->student_email,
+                    'registration_code' => $code->registration_code,
+                );
+                return redirect()->route('auth.register', $data);
 
-                $rule = [
-                    'student_code' => 'unique:code_generateds',
-                    'student_email' => 'uniquer:code_generateds',
-                ];
-                $validateData = Validator::make($request->all(), $rule);
-                if(!$validateData->fails()){
-                    die('true');
-                } else {
-                    die('false');
-                }
-
+            }
 
         }
     }
 
     public function is_invalid(Request $request)
     {
-        $email = CodeGenerated::all()->where('student_email', $request->input('student_email'))->first();
-        $code = CodeGenerated::all()->where('student_code', $request->input('student_code'))->first();
-        $reg = CodeGenerated::all()->where('registration_code', $request->input('registration_code'))->first();
+        if( !empty($request->except('_token'))){
+
+
+                    $rule = [
+                        'student_code' => 'unique:code_generateds',
+                        'student_email' => 'unique:code_generateds',
+                    ];
+                    $validateData = Validator::make($request->all(), $rule);
+                    if(!$validateData->fails()){
+                        die('true');
+                    } else {
+                        die('false');
+                    }
+
+
+
+
+
+        }
+    }
+
+    public function is_valid(Request $request)
+    {
+        if (!empty($request->except('_token'))){
+            $rules = [
+                'registration_code' => 'unique:code_generateds',
+            ];
+            $valid = Validator::make($request->all(), $rules);
+            if($valid->fails()){
+                die('true');
+            } else {
+                die('false');
+            }
+        }
     }
 }
