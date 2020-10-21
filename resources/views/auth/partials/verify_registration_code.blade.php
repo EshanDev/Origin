@@ -8,40 +8,43 @@
             </div>
         </div>
 
-        @if($errors->has('registration_code'))
-            <div class="alert alert-danger mt-5 text-center">
-                {{$errors->first('registration_code')}}
-            </div>
+        @if(session('fails'))
+        <div class="alert alert-danger mt-5 text-center">
+            {{session('fails')}}
+        </div>
+        @endif
+        @if(session('success'))
+        <div class="alert alert-success mt-5 text-center">
+            {{session('success')}}
+        </div>
         @endif
 
-            <div class="verify-form">
-                <form action="{{ url('auth/verify') }}" class="form" method="POST" id="verify_form"  autocomplete="off">
-                    @csrf
-                    <fieldset class="border rounded">
-                        <legend class="w-auto">ยืนยันรหัสลงทะเบียน</legend>
-                        <div class="form-group">
 
-                            <label for="registration_code">กรอกรหัสลงทะเบียน</label>
-                            <input type="text" class="form-control serials"
-                                   name="registration_code"
-                                   id="registration_code"
-                                   placeholder="ABCDE-ABCDE-ABCDE-ABCDE"
-                                   onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = 'ABCDE-ABCDE-ABCDE-ABCDE'">
-                        </div>
-                        <div class="verify-btn">
-                            <input type="submit" class="btn btn-primary" value="ส่งรหัสลงทะเบียน">
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+        <div class="verify-form">
+            <form action="{{ url('auth/verify') }}" class="form" method="POST" id="verify_form" autocomplete="off">
+                @csrf
+                <fieldset class="border rounded">
+                    <legend class="w-auto">ยืนยันรหัสลงทะเบียน</legend>
+                    <div class="form-group">
+
+                        <label for="registration_code">กรอกรหัสลงทะเบียน</label>
+                        <input type="text" class="form-control serials" name="registration_code" id="registration_code"
+                            placeholder="ABCDE-ABCDE-ABCDE-ABCDE" onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'ABCDE-ABCDE-ABCDE-ABCDE'">
+                    </div>
+                    <div class="verify-btn">
+                        <input type="submit" class="btn btn-primary" value="ส่งรหัสลงทะเบียน">
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
+</div>
 
 
 @section('script')
-    <script>
-        $(document).ready(function(){
+<script>
+    $(document).ready(function(){
 
 
             $('.serials').mask('AAAAA-BBBBB-CCCCC-DDDDD', {'translation': {
@@ -54,5 +57,5 @@
             })
 
         });
-    </script>
+</script>
 @endsection

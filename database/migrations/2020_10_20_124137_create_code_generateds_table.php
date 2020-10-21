@@ -17,7 +17,7 @@ class CreateCodeGeneratedsTable extends Migration
             $table->id();
             $table->string('student_code')->unique();
             $table->string('student_email')->unique();
-            $table->string('serials');
+            $table->string('registration_code');
             $table->timestamps();
         });
     }

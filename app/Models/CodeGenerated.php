@@ -9,5 +9,5 @@ class CodeGenerated extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['student_code', 'student_email', 'serials'];
+    protected $fillable = ['student_code', 'student_email', 'registration_code'];
 }

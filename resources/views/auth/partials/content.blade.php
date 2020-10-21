@@ -8,6 +8,7 @@
         </div>
 
 
+
         <!-- Conditions Start -->
         <div class="conditions">
             <div class="text-header">
@@ -54,13 +55,14 @@
             <div class="form-header">
                 <p>กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</p>
             </div>
+
             <form action="{{ route('auth.getCode') }}" class="form" id="condition_form" method="POST"
                 autocomplete="off">
                 @csrf
                 <div class="grid-container">
                     <div class="form-group">
                         <label for="student_code">ระบุรหัสนักศึกษา</label>
-                        <input type="text" class="form-control" name="student_code" id="student_code"
+                        <input type="text" class="form-control @error('student_code') is-invalid @enderror" name="student_code" id="student_code"
                             value="{{old('student_code')}}" placeholder="xxxxxxxxxx" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'xxxxxxxxxx'">
                     </div>
@@ -72,8 +74,17 @@
                     </div>
                 </div>
                 <div class="condition-btn">
-                        <input type="submit" class="btn btn-primary" value="รับรหัสลงทะเบียน">
+                    <input type="submit" class="btn btn-primary" value="รับรหัสลงทะเบียน">
                 </div>
+                @if($errors->any())
+                <div class="alert alert-danger mt-5">
+                    <ul style="margin: 0">
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
             </form>
 
         </div>

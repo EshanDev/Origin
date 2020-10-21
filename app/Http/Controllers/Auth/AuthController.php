@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    public function verify_code()
+    public function verifyCodeForm()
     {
         return view('auth', ['page' => 'verify_code']);
     }
@@ -17,23 +18,17 @@ class AuthController extends Controller
 
     public function verify(Request $request)
     {
-        $rules = [
-            'registration_code' => 'required|string',
-        ];
-        $messages = [
-          'required' => 'กรุณากรอกรหัสลงทะเบียน',
-        ];
+	    $data = array(
+            'registration_code' => $request->registration_code,
+        );
 
-
-        $validator = Validator::make($request->all(), $rules, $messages);
-
-        if($validator->fails()){
-            return back()
-                ->withErrors($validator)
-                ->withInput();
-        };
-
-        return response()->json($request->all());
+        $query = DB::table('code_generateds')->where('serials', $data['registration_code'])->first();
+        if($query){
+            return true;
+        } else{
+            return back()->withInput()->with(['fails' => 'รหัสลงทะเบียนไม่ถูกต้อง กรุณาตรวจสอบอีกครั้ง']);
+        }
 
     }
+
 }

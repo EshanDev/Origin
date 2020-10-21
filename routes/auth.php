@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ConditionController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\VerifyController;
 use App\Http\Controllers\Auth\RegisterController;
 
 Route::name('auth.')->group(function(){
@@ -20,7 +21,7 @@ Route::name('auth.')->group(function(){
     Route::get('login', [LoginController::class, 'LogInForm'])->name('login');
 
     // Send the registration code
-    Route::post('getCode', [ConditionController::class, 'SendCode'])->name('getCode')->middleware('auth');
+    Route::post('getCode', [ConditionController::class, 'SendCode'])->name('getCode');
 
     
     // Route::fallback(function(){
@@ -30,11 +31,8 @@ Route::name('auth.')->group(function(){
 
 // verify registeration code
 Route::prefix('verify')->group(function(){
-    Route::name('auth.')->group(function(){
-        Route::get('code', [AuthController::class, 'verify_code'])->name('verify.code');
-        Route::post('', [AuthController::class, 'verify']);
-        
-    });
+        Route::get('', [AuthController::class, 'verifyCodeForm'])->name('verify.code');
+        Route::post('', [VerifyController::class, 'verify_registration_code']);
    
 });
 
