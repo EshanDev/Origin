@@ -75,9 +75,24 @@ class VerifyController extends Controller
         }
     }
 
-    public function checkUserName(Request $request){
-        dd($request->all());
+    public function checkUserName(Request $request)
+    {
+        $arrayData = array(
+            'email' => $request->email,
+            'password' => $request->password,
+        );
+        if ($request->except('_token')){
+            $value = $arrayData['email'];
+            $username = User::all()->where('email', $value)->first();
+            $username2 = User::all()->where('student_code', $value)->first();
+            if($username || $username2){
+                die('true');
+            } else{
+                die('false');
+            }
+        }
+        die('false');
     }
 
-    
+
 }

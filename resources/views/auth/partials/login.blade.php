@@ -16,7 +16,12 @@
                 {{ session('success') }}
             </div>
             @endif
-            <form action="{{ route('check.username') }}" class="form" autocomplete="off" role="form" id="login_form"
+            @if(session('fails'))
+                <div class="alert alert-danger">
+                    {{session('fails')}}
+                </div>
+            @endif
+            <form action="{{ route('auth.user.login') }}" class="form" autocomplete="off" role="form" id="login_form"
                 method="POST">
                 @csrf
 
@@ -24,15 +29,23 @@
                 <div class="grid-container">
                     <div class="form-group">
                         <label for="email_or_student_code">รหัสนักศึกษา หรือ อีเมล์</label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder="รหัสนักศึกษา หรือ อีเมล์" value="{{ old('email') }}">
-     
+                        <input type="text" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="รหัสนักศึกษา หรือ อีเมล์" value="{{ old('email') }}">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                                        <div>{{ $message }}</div>
+                                    </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="password">รหัสผ่าน</label>
                         <input type="password" name="password" id="password"
-                            class="form-control" placeholder=" รหัสผ่าน"
+                            class="form-control @error('password') is-invalid @enderror" placeholder=" รหัสผ่าน"
                             value="{{ old('password') }}">
-           
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                                        <div>{{ $message }}</div>
+                                    </span>
+                        @enderror
                     </div>
                     <div class="login-btn">
                         <input type="submit" class="btn btn-primary" value="ลงชื่อใช้งาน">

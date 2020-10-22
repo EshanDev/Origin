@@ -20,7 +20,6 @@ class LoginController extends Controller
     /**
      * Show Student login page
      *
-     * @return \Illuminate\View\View
      */
     public function LogInForm()
     {
@@ -34,6 +33,13 @@ class LoginController extends Controller
             return ['student_code' => $request->get('email'), 'password'=>$request->get('password')];
         }
         return $request->only($this->username(), 'password');
+    }
+
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        throw ValidationException::withMessages([
+            $this->username() => 'รหัสผ่านไม่ถูกต้อง',
+        ]);
     }
 
 }

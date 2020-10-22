@@ -99,8 +99,17 @@ $("#login_form").validate({
     rules: {
        email: {
            required: true,
-          
-       }, 
+           remote: {
+               url: baseUrl + "/verify/checkUserName",
+               type: "POST",
+               data: {
+                   _token: function(){
+                       return $('input[name="_token"]').val();
+                   },
+               },
+           },
+
+       },
        password: {
            required: true,
        },
@@ -114,3 +123,46 @@ $("#login_form").validate({
         }
     }
 })
+
+
+// Verify Register form.
+$("#registration_form").validate({
+   rules: {
+       student_code: "required",
+       registration_code: "required",
+       student_name: 'required',
+       student_branch: 'required',
+       student_faculty: 'required',
+       password: 'required',
+       name: "required",
+       password_confirmation: {
+           required: true,
+           equalTo: "#password",
+       },
+   },
+
+    messages: {
+       student_code: {
+           required: "กรุณากรอกรหัสนักศึกษา",
+       },
+        student_email: {
+           required: "กรุณาที่อยู่อีเมล์",
+        },
+        student_name: {
+           required: "กรุณาระบุชื่อ-นามสกุล",
+        },
+        student_branch: {
+           required: "กรุณาระบุสาขาวิชาเอก",
+        },
+        student_faculty: {
+           required: "กรุณาระบุคณะที่กำลังศึกษา",
+        },
+        password: {
+           required: "กรุณาระบุรหัสผ่าน",
+        },
+        password_confirmation: {
+           required: "กรุณาระบุรหัสผ่านอีกครั้ง",
+            equalTo: "รหัสผ่านไม่ตรงกัน",
+        },
+    }
+});
