@@ -1,6 +1,6 @@
 <div class="auth login-container contrainer-fluid">
     <div class="content">
-        
+
         <div class="login-form">
             <div class="content-header">
                 <div class="login-icons">
@@ -12,22 +12,27 @@
                 </div>
             </div>
             @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
             @endif
-            <form action="#" class="form" autocomplete="off" role="form" id="login_form" method="POST">
+            <form action="{{ route('check.username') }}" class="form" autocomplete="off" role="form" id="login_form"
+                method="POST">
                 @csrf
-                
-                
+
+
                 <div class="grid-container">
                     <div class="form-group">
                         <label for="email_or_student_code">รหัสนักศึกษา หรือ อีเมล์</label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder="รหัสนักศึกษา หรือ อีเมล์">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="รหัสนักศึกษา หรือ อีเมล์" value="{{ old('email') }}">
+     
                     </div>
                     <div class="form-group">
                         <label for="password">รหัสผ่าน</label>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="รหัสผ่าน">
+                        <input type="password" name="password" id="password"
+                            class="form-control" placeholder=" รหัสผ่าน"
+                            value="{{ old('password') }}">
+           
                     </div>
                     <div class="login-btn">
                         <input type="submit" class="btn btn-primary" value="ลงชื่อใช้งาน">

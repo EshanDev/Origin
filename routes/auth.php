@@ -22,6 +22,7 @@ Route::name('auth.')->group(function(){
 
     // Login Route.
     Route::get('login', [LoginController::class, 'LogInForm'])->name('login');
+    Route::post('login', [LoginController::class, 'login'])->name('user.login');
 
     // Send the registration code
     Route::post('getCode', [ConditionController::class, 'SendCode'])->name('getCode');
@@ -34,6 +35,7 @@ Route::prefix('verify')->group(function(){
         Route::post('', [VerifyController::class, 'verify_registration_code']);
         Route::post('is_valid', [VerifyController::class, 'is_valid']);
         Route::post('is_invalid', [VerifyController::class, 'is_invalid']);
+       
    
 });
 

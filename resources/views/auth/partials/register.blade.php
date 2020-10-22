@@ -113,6 +113,7 @@
                                        placeholder="กำหนดรหัสผู้ใช้งาน" onfocus="this.placeholder=''"
                                        onblur="this.placeholder='กำหนดรหัสผู้ใช้งาน'">
                                 <input type="hidden" name="email"  id="email" value="{{ $student['email'] }}">
+                                <input type="hidden" name="code" id="code" value="{{ $student['code'] }}">
                             </div>
                             <div class="form-group">
                                 <label for="password">รหัสผ่าน</label>

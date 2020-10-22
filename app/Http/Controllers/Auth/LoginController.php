@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+
+    use AuthenticatesUsers;
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
     /**
      * Show Student login page
      *
@@ -18,24 +27,13 @@ class LoginController extends Controller
         return view('auth', ['page'=>'login']);
     }
 
-    public function authenticate(Request $request)
+
+    protected function credentials(Request $request)
     {
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
-        $credentials = $request->only('email', 'password');
-        if(Auth::attempt($credentials)){
-            return redirect()->intended('home');
+        if(is_numeric($request->get('email'))){
+            return ['student_code' => $request->get('email'), 'password'=>$request->get('password')];
         }
-
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('login');
+        return $request->only($this->username(), 'password');
     }
 
 }

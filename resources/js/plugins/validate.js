@@ -91,3 +91,26 @@ $("#verify_form").validate({
        },
     },
 });
+
+
+//Verify login form.
+
+$("#login_form").validate({
+    rules: {
+       email: {
+           required: true,
+          
+       }, 
+       password: {
+           required: true,
+       },
+    },
+    messages :{
+        email: {
+            required: "กรุณากรอก อีเมล์ หรือ รหัสนักศึกษา",
+        },
+        password: {
+            required: "กรุณากรอกรหัสผ่าน",
+        }
+    }
+})

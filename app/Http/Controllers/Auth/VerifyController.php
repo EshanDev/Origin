@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\CodeGenerate;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -63,6 +64,7 @@ class VerifyController extends Controller
         if (!empty($request->except('_token'))){
             $rules = [
                 'registration_code' => 'unique:code_generates',
+                'email' => 'unique:users',
             ];
             $valid = Validator::make($request->all(), $rules);
             if($valid->fails()){
@@ -72,4 +74,10 @@ class VerifyController extends Controller
             }
         }
     }
+
+    public function checkUserName(Request $request){
+        dd($request->all());
+    }
+
+    
 }
