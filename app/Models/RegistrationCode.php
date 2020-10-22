@@ -10,4 +10,10 @@ class RegistrationCode extends Model
     use HasFactory;
 
     protected $fillable = ['code'];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\CodeGenerated;
+use App\Models\CodeGenerate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -12,12 +12,12 @@ class VerifyController extends Controller
 {
     public function verify_registration_code(Request $request)
     {
-        $Exists_reg_code = CodeGenerated::all()->where('registration_code', $request->input('registration_code'))->first();
+        $Exists_reg_code = CodeGenerate::all()->where('registration_code', $request->input('registration_code'))->first();
 
         if(!$Exists_reg_code){
             return back()->withInput()->withErrors('รหัสลงทะเบียนไม่ถูกต้อง');
         } else {
-            $codes = DB::table('code_generateds')
+            $codes = DB::table('code_generates')
                 ->select('student_code', 'student_email', 'registration_code')
                 ->where('registration_code', $request->input('registration_code'))
                 ->get();
@@ -41,8 +41,8 @@ class VerifyController extends Controller
 
 
                     $rule = [
-                        'student_code' => 'unique:code_generateds',
-                        'student_email' => 'unique:code_generateds',
+                        'student_code' => 'unique:code_generates',
+                        'student_email' => 'unique:code_generates',
                     ];
                     $validateData = Validator::make($request->all(), $rule);
                     if(!$validateData->fails()){
@@ -62,7 +62,7 @@ class VerifyController extends Controller
     {
         if (!empty($request->except('_token'))){
             $rules = [
-                'registration_code' => 'unique:code_generateds',
+                'registration_code' => 'unique:code_generates',
             ];
             $valid = Validator::make($request->all(), $rules);
             if($valid->fails()){

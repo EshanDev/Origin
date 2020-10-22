@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CodeGenerated;
+use App\Models\CodeGenerate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -28,8 +28,8 @@ class ConditionController extends Controller
         );
 
         $rules = [
-            'student_code' => 'required|digits:10|string|unique:code_generateds',
-            'student_email' => 'required|string|email|unique:code_generateds',
+            'student_code' => 'required|digits:10|string|unique:code_generates',
+            'student_email' => 'required|string|email|unique:code_generates',
         ];
 
         $messages = [
@@ -45,7 +45,7 @@ class ConditionController extends Controller
             return back()->withInput()->withErrors($validateData);
         };
         try{
-             CodeGenerated::create([
+             CodeGenerate::create([
                 'student_code' => $data['student_code'],
                 'student_email' => $data['student_email'],
                 'registration_code' => GenSerials(),

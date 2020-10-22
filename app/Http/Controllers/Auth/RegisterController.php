@@ -69,6 +69,32 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        //
+        try{
+
+            // Insert Registration Code into table
+        $user->userActivationCode()->create([
+            'code' => Hash::make($request->registration_code),
+        ]);
+
+        // Insert Student information into table
+        $user->studentInfo()->create([
+            'student_name' => $request->student_name,
+            'student_code' => $request->student_code,
+            'student_email' => $request->student_email,
+            'student_branch' => $request->student_branch,
+            'student_faculty' => $request->student_faculty,
+        ]);
+
+        // Delete Old Registration Code from table
+        $user->coded()->delete();
+
+
+        // Logout the user
+        $this->guard()->logout();
+
+        return redirect()->route('auth.login')->with(['success' => 'คุณได้ลงทะเบียนเรียบร้อยแล้ว']);
+        } catch (\Exception $exception) {
+            return back()->withInput()->withErrors($exception->getMessage());
+        }
     }
 }

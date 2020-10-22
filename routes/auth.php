@@ -6,6 +6,7 @@ use App\Http\Controllers\ConditionController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\VerifyController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Hash;
 
 Route::name('auth.')->group(function(){
 
@@ -15,6 +16,8 @@ Route::name('auth.')->group(function(){
     // Register Route;
     Route::prefix('register')->group(function(){
        Route::get('', [RegisterController::class, 'newStudent'])->name('register');
+       Route::post('', [RegisterController::class, 'register'])->name('new.student');
+       Route::post('/test', [RegisterController::class, 'test'])->name('test');
     });
 
     // Login Route.
@@ -23,10 +26,6 @@ Route::name('auth.')->group(function(){
     // Send the registration code
     Route::post('getCode', [ConditionController::class, 'SendCode'])->name('getCode');
 
-    
-    // Route::fallback(function(){
-    //     return redirect()->route('auth.home');
-    // });
 });
 
 // verify registeration code
@@ -40,4 +39,16 @@ Route::prefix('verify')->group(function(){
 
 Route::fallback(function(){
     return view('errors.404');
+});
+
+
+Route::get('/password', function(){
+    $pw = 1234;
+    $hashed = '$2a$04$2ihr3Bjo/N5QIU7xKaw86uNl3cBbnMi/40lUjuytOwlcZJqCU5OdC';
+    if(Hash::check($pw, $hashed)){
+        echo "true";
+    } else{
+        echo "false";
+    }
+
 });

@@ -11,6 +11,11 @@
                     <div>ลงชื่อเข้าใช้งาน</div>
                 </div>
             </div>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <form action="#" class="form" autocomplete="off" role="form" id="login_form" method="POST">
                 @csrf
                 

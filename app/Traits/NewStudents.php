@@ -1,6 +1,7 @@
 <?php
 namespace App\Traits;
 
+use App\Models\CodeGenerate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -8,25 +9,32 @@ trait NewStudents
 {
     public function newStudent(Request $request)
     {
-        if(count($request->all()) > 0) {
-            if (isset($_GET['student_code'])){
-                $query = DB::table('code_generateds')
-                ->select('student_code', 'student_email', 'registration_code')
-                ->where('student_code', $_GET['student_code'])->get();
-                foreach ($query as $key => $item){
-                    $data = array(
-                        'student_code' => $item->student_code,
-                        'student_email' => $item->student_email,
-                        'registratoin_code' => $item->registration_code,
-                    );
-                    return view('auth', ['page'=> 'register'],)->with('register', $data);
-                }
-            } else{
-                return redirect()->route('verify.code');
-            }
-        } else {
-            return redirect()->route('verify.code');
-        }
+      if(isset($_GET['student_code']) && isset($_GET['student_email']) && isset($_GET['registration_code'])){
+        $data = $request->all();
+        
+        $student = [
+          'code' => $data['student_code'],
+          'email' => $data['student_email'],
+          'serials' => $data['registration_code'],
+          'username' => FakeUserName(),
+        ];
+        return view('auth', ['page'=>'register'])->with('student', $student);
+      }
+      return redirect()->route('verify.code');
+    }
+
+
+
+    
+    public function test(Request $request)
+    {
+      $delete = DB::table('code_generates')->where('registration_code', $request->registration_code)->delete();
+
+      if($delete){
+        return "ok";
+      } else{
+        return 'not ok';
+      }
     }
 
 }

@@ -22,7 +22,7 @@ class AuthController extends Controller
             'registration_code' => $request->registration_code,
         );
 
-        $query = DB::table('code_generateds')->where('serials', $data['registration_code'])->first();
+        $query = DB::table('code_generates')->where('serials', $data['registration_code'])->first();
         if($query){
             return true;
         } else{

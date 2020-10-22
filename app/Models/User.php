@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'acitve',
     ];
 
     /**
@@ -40,4 +41,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+
+    public function coded()
+    {
+        return $this->hasOne(CodeGenerate::class, 'id', 'id');
+    }
+
+    public function userActivationCode(){
+        return $this->hasOne(RegistrationCode::class, 'reg_id', 'id');
+    }
+
+    public function userIsActivated()
+    {
+        if($this->active){
+            return true;
+        }
+        return false;
+    }
+
+    public function studentInfo()
+    {
+        return $this->hasOne(Student::class, 'student_id', 'id');
+    }
 }

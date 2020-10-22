@@ -13,15 +13,15 @@
                 <div>คำชี้แจง</div>
             </div>
             <div class="list">
-                การกรอกข้อมูลลงทะเบียน นักศึกษาจะต้องกรอกข้อมูลที่เป็นจริง ครบทุกช่องที่กำหนดให้
-                เพื่อใช้เป็นข้อมูลในการตรวจสอบสิทธิ์การใช้งาน และให้เป็นไปตามวัตถุประสงค์ของการศึกษาวิจัย
+                การกรอกข้อมูลลงทะเบียน นักศึกษาจะต้องกรอกข้อมูลที่เป็นจริงให้ครบทุกช่องที่กำหนดไว้
+                เพื่อใช้เป็นข้อมูลในการตรวจสอบสิทธิ์การใช้งาน และเพื่อให้เป็นไปตามวัตถุประสงค์ของการศึกษาวิจัย
             </div>
         </div>
 
 
         <div class="registration-form">
 
-            <form action="" method="post" class="form" autocomplete="off"
+            <form action="{{ route('auth.new.student') }}" method="post" class="form" autocomplete="off"
                   id="registration_form">
             @csrf
             <!-- Form Group One -->
@@ -34,7 +34,7 @@
                                 <label for="registration_code">รหัสลงทะเบียน</label>
                                 <input type="text" class="form-control serials" name="registration_code"
                                        id="registration_code" placeholder="ABCDE-ABCDE-ABCDE-ABCDE"
-                                       value=""
+                                       value="{{ $student['serials'] }}"
                                        onfocus="this.placeholder = ''"
                                        onblur="this.placeholder = 'ABCDE-ABCDE-ABCDE-ABCDE'">
 
@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 <label for="student_code">รหัสนักศึกษา</label>
                                 <input type="text" name="student_code" class="form-control"
-                                       value="" placeholder="ระบุรหัสนักศึกษา"
+                                       value="{{ $student['code'] }}" placeholder="ระบุรหัสนักศึกษา"
                                        onfocus="this.placeholder = ''"
                                        onblur="this.placeholder = 'ระบุรหัสนักศึกษา'">
 
@@ -51,7 +51,7 @@
                             <div class="form-group">
                                 <label for="student_email">ที่อยู่อีเมล์</label>
                                 <input type="email" name="student_email" class="form-control"
-                                       value=""
+                                       value="{{ $student['email'] }}"
                                        placeholder="ระบุที่อยู่อีเมล์"
                                        onfocus="this.placeholder = ''"
                                        onblur="this.placeholder = 'ระบุที่อยู่อีเมล์'">
@@ -109,9 +109,10 @@
                         <div class="grid-container">
                             <div class="form-group">
                                 <label for="name">รหัสผู้ใช้งาน <span class="text-danger">***เปลี่ยนได้</span></label>
-                                <input type="text" name="name" class="form-control" value=""
+                                <input type="text" name="name" class="form-control" value="{{ $student['username'] }}"
                                        placeholder="กำหนดรหัสผู้ใช้งาน" onfocus="this.placeholder=''"
                                        onblur="this.placeholder='กำหนดรหัสผู้ใช้งาน'">
+                                <input type="hidden" name="email"  id="email" value="{{ $student['email'] }}">
                             </div>
                             <div class="form-group">
                                 <label for="password">รหัสผ่าน</label>
@@ -137,6 +138,16 @@
                 </div>
 
             </form>
+
+            @if($errors->any())
+                <ul style="margin: 0;">
+                    @foreach($errors->all() as $error)
+                        <li>
+                            {{ $error }}
+                        </li>
+                    @endforeach
+                </ul>
+                @endif
         </div>
 
 
