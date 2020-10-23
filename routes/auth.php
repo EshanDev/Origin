@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ConditionController;
@@ -26,6 +27,11 @@ Route::name('auth.')->group(function(){
 
     // Send the registration code
     Route::post('getCode', [ConditionController::class, 'SendCode'])->name('getCode');
+
+
+    // Password reset.
+    Route::get('forget-password', [ForgotPasswordController::class, 'getEmail']);
+    Route::post('forget-password', [ForgotPasswordController::class, 'postEmail']);
 
 });
 
