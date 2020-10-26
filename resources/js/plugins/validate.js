@@ -166,3 +166,31 @@ $("#registration_form").validate({
         },
     }
 });
+
+
+// Verify Reset password
+$("#reset_form").validate({
+    rules: {
+        email: {
+            required: true,
+            email: true,
+            remote: {
+                url: baseUrl + "/verify/is_valid",
+                type: "POST",
+                data: {
+                    _token: function(){
+                        return $('input[name="_token"]').val();
+                    }
+                },
+            },
+        },
+
+    },
+    messages: {
+        email: {
+            email: "รูปแบบอีเมล์ไม่ถูกต้อง",
+            required: "กรุณากรอกที่อยู่อีเมล์",
+            remote: "ไม่พบที่อยู่อีเมล์นี้",
+        }
+    }
+})

@@ -9980,6 +9980,16 @@ h3 {
     border-color: #BDBDBD;
   }
 }
+button.close {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: -3px;
+  margin-right: -6px;
+}
+button.close:focus {
+  outline: none !important;
+}
+
 /* Mixins A Breakpoint */
 *, *::before, *::after {
   margin: 0;

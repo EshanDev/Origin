@@ -49,6 +49,7 @@
                     </div>
                     <div class="login-btn">
                         <input type="submit" class="btn btn-primary" value="ลงชื่อใช้งาน">
+                        <a href="{{ url('auth/password_request') }}">Forgot Your Password?</a>
                     </div>
                 </div>
             </form>

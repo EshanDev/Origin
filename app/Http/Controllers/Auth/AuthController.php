@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('ismember');
+    }
     public function verifyCodeForm()
     {
         return view('auth', ['page' => 'verify_code']);

@@ -33,6 +33,10 @@ Route::name('auth.')->group(function(){
     Route::get('forget-password', [ForgotPasswordController::class, 'getEmail']);
     Route::post('forget-password', [ForgotPasswordController::class, 'postEmail']);
 
+    // Reset Password
+    Route::get('password_request', [ForgotPasswordController::class, 'requestPassword']);
+    Route::post('send_request_reset_password', [ForgotPasswordController::class, 'resetPassword']);
+
 });
 
 // verify registeration code

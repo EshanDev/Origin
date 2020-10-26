@@ -6,7 +6,15 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
+button.close{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: -3px;
+    margin-right: -6px;
+    &:focus{
+        outline: none !important;
+    }
+}
 
 // Wrapper
 @import "wrapper";

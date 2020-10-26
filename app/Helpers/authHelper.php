@@ -60,3 +60,7 @@ if (!function_exists('formatDateThai')){
         return "$strDay $strMonthThai $strYear $strHour:$strMinute";
     }
 }
+
+
+
+

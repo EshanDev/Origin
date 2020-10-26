@@ -2,16 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegistrationCode;
 use App\Models\CodeGenerate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class ConditionController extends Controller
 {
+
+   public function __construct()
+   {
+       $this->middleware('ismember');
+   }
+
+
     /**
      * Show Conditin view informatin page
-     * @return \Illuminate\View\View
      */
     public function index()
     {
@@ -45,14 +54,25 @@ class ConditionController extends Controller
             return back()->withInput()->withErrors($validateData);
         };
         try{
-             CodeGenerate::create([
+             $code =CodeGenerate::create([
                 'student_code' => $data['student_code'],
                 'student_email' => $data['student_email'],
-                'registration_code' => GenSerials(),
+                'registration_code' => $data['registration_code'],
             ]);
-        
-            return redirect()->route('verify.code')->with(['success' => 'รหัสลงทะเบียนได้ส่งไปยัง ' .$data['student_email']. ' แล้ว']);
-            
+
+
+            if($code){
+
+                Mail::to($code->student_email)->send(new RegistrationCode($code));
+                return redirect()->route('verify.code')->with(['success' => 'รหัสลงทะเบียนได้ส่งไปยัง ' .$code->student_email. ' แล้ว']);
+            } else{
+                return back()->with('error', 'ไม่สามารถบันทึกข้อมูลได้ โปรดลองใหม่อีกครั้ง');
+            }
+
+
+
+
+
 
         } catch (\Exception $exception){
             return back()->withInput()->withErrors($exception->getMessage());

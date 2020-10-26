@@ -35,12 +35,25 @@
                     margin-left: auto;
                     margin-right: auto;
                     text-align: center;
+                    display: grid;
+                    grid-gap: 1em;
+                    grid-template-columns: auto 1fr;
+                    justify-items: center;
+                    align-items: center;
                     .btn{
-                        min-width: 200px;
                         font-size: 15px;
                         font-weight: 300;
 
                     }
+                    @include breakpoint(319px, max){
+                        grid-template-columns: 1fr;
+                        .btn{
+                            width: 100%;
+                            min-width: 200px;
+
+                        }
+                    }
+
                 }
 
                 .form{

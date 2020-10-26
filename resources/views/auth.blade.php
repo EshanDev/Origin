@@ -28,6 +28,10 @@
         @include('auth.partials.verify_registration_code')
         @break
 
+        @case('request_password')
+        @include('auth.partials.passwordreset')
+        @break
+
     @default
         @include('auth.partials.content')
     @endswitch
